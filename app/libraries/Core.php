@@ -3,6 +3,7 @@
 namespace app\libraries;
 
 use app\controllers\Pages;
+use app\controllers\Users;
 
 class Core
 {
@@ -26,6 +27,8 @@ class Core
 
         if ($this->currentController === "Pages") {
             $this->currentController = new Pages;
+        } elseif ($this->currentController === "Users") {
+            $this->currentController = new Users;
         }
 
 
