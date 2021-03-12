@@ -107,3 +107,29 @@ footer a {
     color: white;
 
 }
+
+/* INDEX WINDOW */
+
+.bg-img {
+    background-image: url(../img/Nike.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 630px;
+}
+
+#shopNow {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: rgb(250, 91, 47);
+    border: none;
+    padding: 15px 105px;
+}
+
+#shopNow:hover {
+    cursor: pointer;
+    color: rgb(250, 91, 47);
+    background-color: white;
+}
