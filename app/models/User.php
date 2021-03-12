@@ -43,4 +43,25 @@ class User
             return false;
         }
     }
+
+    public function login($email, $notHashedPass)
+    {
+        $this->db->query("SELECT * FROM users WHERE `email` = :email");
+
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->singleRow();
+
+        if ($row) {
+            $hashedPassword = $row->password;
+        } else {
+            return false;
+        }
+
+        if (password_verify($notHashedPass, $hashedPassword)) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
 }
