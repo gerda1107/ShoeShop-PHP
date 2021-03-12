@@ -133,3 +133,17 @@ footer a {
     color: rgb(250, 91, 47);
     background-color: white;
 }
+
+/* REGISTER */
+
+.registerBg {
+    background-image: url(../img/registerBg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+small {
+    color: rgb(238, 61, 30);
+}
