@@ -1,0 +1,47 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* NAVBAR */
+
+.fas {
+    font-size: 25px;
+}
+
+.stick {
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 1;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.title a:hover {
+    cursor: pointer;
+    border-bottom: none; 
+    color: black;
+}
+
+nav a {
+    color: black;
+    font-weight: 600;
+}
+
+nav a:hover, nav i:hover {
+    color: #003cd4;
+    cursor: pointer;
+}
+
+.fas:hover {
+    color: #777777;
+}
+
+#slider {
+    font-weight: bold;
+}
