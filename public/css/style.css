@@ -45,3 +45,65 @@ nav a:hover, nav i:hover {
 #slider {
     font-weight: bold;
 }
+
+/*SIDE NAV*/
+
+.sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sideNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #e0d7d7;
+    font-size: 30px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideNav a:hover {
+    color: rgb(250, 91, 47);
+}
+
+.sideNav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #111111;
+}
+
+#social {
+    padding: 45px;
+    width: 80%;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: .2px;
+    border-bottom: 0.5px solid #777777;
+}
+
+#footerSecond {
+    padding: 33px;
+    color: #777777;
+}
+
+footer a {
+    color: white;
+
+}
