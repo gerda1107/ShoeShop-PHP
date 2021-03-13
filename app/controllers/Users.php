@@ -152,4 +152,14 @@ class Users extends Controller
         $_SESSION['email'] = $userRow->email;
         redirect('/pages');
     }
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['email']);
+
+        session_destroy();
+
+        redirect('/users/login');
+    }
 }
