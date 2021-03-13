@@ -6,8 +6,13 @@
     <a href="<?php echo URLROOT; ?>/items/shop" class="nav-link">SHOP</a>
     <a href="">ABOUT</a>
     <a href="">CONTACT</a>
-    <a href="<?php echo URLROOT; ?>/users/register" class="nav-link">REGISTER</a>
-    <a href="<?php echo URLROOT; ?>/users/login" class="nav-link">LOGIN</a>
+    <?php if (!ifUserIsLoggedIn()) : ?>
+        <a href="<?php echo URLROOT; ?>/users/register" class="nav-link">REGISTER</a>
+        <a href="<?php echo URLROOT; ?>/users/login" class="nav-link">LOGIN</a>
+    <?php else : ?>
+        <a href="<?php echo URLROOT; ?>/users/profile" class="nav-link">PROFILE</a>
+        <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">LOGOUT</a>
+    <?php endif; ?>
 
     <div class="d-flex mt-5">
         <a href="#" class="footerIcons" target="_blank"><i class="fab fa-facebook-f m-10"></i></a>

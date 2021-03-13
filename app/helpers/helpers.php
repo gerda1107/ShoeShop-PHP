@@ -31,3 +31,9 @@ function redirect($whereTo)
 {
     header("Location: " . URLROOT . "$whereTo");
 }
+
+function ifUserIsLoggedIn()
+{
+    if (isset($_SESSION['user_id'])) return true;
+    return false;
+}
