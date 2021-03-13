@@ -4,6 +4,7 @@ namespace app\libraries;
 
 use app\controllers\Pages;
 use app\controllers\Users;
+use app\controllers\Items;
 
 class Core
 {
@@ -29,6 +30,8 @@ class Core
             $this->currentController = new Pages;
         } elseif ($this->currentController === "Users") {
             $this->currentController = new Users;
+        } elseif ($this->currentController === "Items") {
+            $this->currentController = new Items;
         }
 
 
