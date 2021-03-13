@@ -27,4 +27,22 @@ class Items extends Controller
         header('Content-Type: application/json');
         echo json_encode($items);
     }
+
+    public function item($id = null)
+    {
+        if (ifRequestIsPost()) {
+            $specItem = $this->itemModel->getItemById($id);
+
+            $data = [
+                'itemInfo' => $specItem,
+                'user_id' => $_SESSION['user_id'],
+            ];
+        } else {
+            $specItem = $this->itemModel->getItemById($id);
+            $data = [
+                'itemInfo' => $specItem,
+            ];
+            $this->view('items/item', $data);
+        }
+    }
 }
