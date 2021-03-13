@@ -19,4 +19,12 @@ class Items extends Controller
         $data = [];
         $this->view('items/shop', $data);
     }
+
+    public function Items()
+    {
+        $items = $this->itemModel->getItems();
+
+        header('Content-Type: application/json');
+        echo json_encode($items);
+    }
 }
