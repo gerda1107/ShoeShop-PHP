@@ -10,5 +10,9 @@ class Pages extends Controller
     {
         $data = [];
         $this->view('pages/index', $data);
+
+        if (ifRequestIsPost()) {
+            redirect('/items/shop');
+        }
     }
 }
