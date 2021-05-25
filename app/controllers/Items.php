@@ -28,9 +28,25 @@ class Items extends Controller
         echo json_encode($items);
     }
 
+    public function ascOrder()
+    {
+        $ascItems = $this->itemModel->sortLowestToHIghest();
+
+        header('Content-Type: application/json');
+        echo json_encode($ascItems);
+    }
+
+    public function descOrder()
+    {
+        $descItems = $this->itemModel->sortHighestToLowest();
+
+        header('Content-Type: application/json');
+        echo json_encode($descItems);
+    }
+
     public function item($id = null)
     {
-        if (ifRequestIsPost()) {
+        if (ifRequestIsPost() && ifUserIsLoggedIn()) {
             $specItem = $this->itemModel->getItemById($id);
 
             $data = [
@@ -43,6 +59,18 @@ class Items extends Controller
                 'itemInfo' => $specItem,
             ];
             $this->view('items/item', $data);
+        }
+    }
+
+    public function addToCart() {
+
+        $btnName = $_POST['addToCartBtn'];
+        $id = $_POST['item_id'];
+
+        if(ifRequestIsPost() && $btnName === 'add' && ifUserIsLoggedIn()) {
+            $data = $this->itemModel->getItemById($id);
+
+            $this->itemModel->addToCartDb($id);
         }
     }
 }

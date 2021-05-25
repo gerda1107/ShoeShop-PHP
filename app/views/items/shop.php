@@ -1,7 +1,12 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
 <section id="shopWindow">
-    <div class="d-flex flex-wrap justify-content-between" id="productDiv"></div>
+    <div class="d-flex justify-content-center p-5">
+        <button class="shopSelect" onclick="sortHighestToLowest()">Price -> Highest to Lowest</button>
+        <button class="shopSelect" onclick="sortLowestToHighest()">Price -> Lowest to Highest</button>
+    </div>
+    <div class=" d-flex flex-wrap justify-content-between" id="productDiv">
+    </div>
 </section>
 
 <script>
@@ -18,6 +23,7 @@
     }
 
     function getProducts(itemsArr) {
+        productDiv.innerHTML = '';
         itemsArr.map(item => {
             let imageDiv = document.createElement('div')
             imageDiv.setAttribute('id', 'imgDiv')
@@ -63,6 +69,22 @@
     function openProduct() {
         let id = event.path[1].className;
         window.location.href = `<?php echo URLROOT; ?>/items/item/${id}`;
+    }
+
+    function sortLowestToHighest() {
+        fetch('<?php echo URLROOT . '/items/ascOrder/'; ?>')
+            .then(resp => resp.json())
+            .then(data => {
+                getProducts(data);
+            });
+    }
+
+    function sortHighestToLowest() {
+        fetch('<?php echo URLROOT . '/items/descOrder/'; ?>')
+            .then(resp => resp.json())
+            .then(data => {
+                getProducts(data);
+            });
     }
 </script>
 
