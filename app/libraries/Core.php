@@ -5,6 +5,7 @@ namespace app\libraries;
 use app\controllers\Pages;
 use app\controllers\Users;
 use app\controllers\Items;
+use app\controllers\Carts;
 
 class Core
 {
@@ -32,6 +33,8 @@ class Core
             $this->currentController = new Users;
         } elseif ($this->currentController === "Items") {
             $this->currentController = new Items;
+        } elseif ($this->currentController === "Carts") {
+            $this->currentController = new Carts;
         }
 
 
