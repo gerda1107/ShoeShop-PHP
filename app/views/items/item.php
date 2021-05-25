@@ -1,4 +1,5 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php';
+?>
 
 <section id="productWindow">
     <div class="d-flex">
@@ -21,7 +22,7 @@
             <p><?php echo $data["itemInfo"]->description; ?></p>
             <p><strong>Stock: <?php echo $data["itemInfo"]->stock; ?></strong></p>
             <form method="POST">
-                <button class="btn btn-dark btn-block" type="submit" name="addBtn" value="add">ADD TO CART</button>
+                <button class="btn btn-dark btn-block" type="submit" name="addToCartBtn" value="addToCart">ADD TO CART</button>
                 <input hidden name="item_id" value="<?php echo $data["itemInfo"]->item_id; ?>">
             </form>
         </div>
